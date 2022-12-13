@@ -4,7 +4,8 @@
  */
 package recuperarPass;
 
-import java.awt.Color;
+import java.awt.*;
+import Login.Login;
 
 /**
  *
@@ -46,10 +47,10 @@ public class recuperarPass extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        background.setBackground(new java.awt.Color(204, 204, 255));
+        background.setBackground(new Color(204, 204, 255));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelCandado.setBackground(new java.awt.Color(204, 204, 255));
+        panelCandado.setBackground(new Color(204, 204, 255));
         panelCandado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/candado.png"))); // NOI18N
@@ -71,7 +72,7 @@ public class recuperarPass extends javax.swing.JFrame {
         frase4.setText("te enviaremos un enlace para recuperar ");
         background.add(frase4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 280, 30));
 
-        usuarioMail.setForeground(new java.awt.Color(204, 204, 204));
+        usuarioMail.setForeground(new Color(204, 204, 204));
         usuarioMail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         usuarioMail.setText("Introduce tu nombre de usuario o e-mail");
         usuarioMail.setBorder(null);
@@ -82,8 +83,8 @@ public class recuperarPass extends javax.swing.JFrame {
         });
         background.add(usuarioMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 330, 40));
 
-        enviarButton.setBackground(new java.awt.Color(255, 51, 153));
-        enviarButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        enviarButton.setBackground(new Color(255, 51, 153));
+        enviarButton.setBorder(javax.swing.BorderFactory.createLineBorder(new Color(0, 0, 0)));
         enviarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         enviarButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -96,13 +97,13 @@ public class recuperarPass extends javax.swing.JFrame {
         enviarButton.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         EnviarWord.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        EnviarWord.setForeground(new java.awt.Color(255, 255, 255));
+        EnviarWord.setForeground(new Color(255, 255, 255));
         EnviarWord.setText("ENVIAR ENLACE");
         enviarButton.add(EnviarWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
         background.add(enviarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 480, 200, 40));
 
-        volverIncioSesionButton.setBackground(new java.awt.Color(204, 204, 255));
+        volverIncioSesionButton.setBackground(new Color(204, 204, 255));
         volverIncioSesionButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         volverIncioSesionButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -116,7 +117,7 @@ public class recuperarPass extends javax.swing.JFrame {
 
         background.add(volverIncioSesionButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 600, 160, 30));
 
-        crearCuentaButton.setBackground(new java.awt.Color(204, 204, 255));
+        crearCuentaButton.setBackground(new Color(204, 204, 255));
         crearCuentaButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         crearCuentaButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -154,7 +155,10 @@ public class recuperarPass extends javax.swing.JFrame {
     }//GEN-LAST:event_enviarButtonMouseClicked
 
     private void volverIncioSesionButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volverIncioSesionButtonMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Redirección a inicio de sesión.");
+        this.dispose();
+        Login inicioSesion = new Login();
+        inicioSesion.setVisible(true);
+
     }//GEN-LAST:event_volverIncioSesionButtonMouseClicked
 
     /**
@@ -164,7 +168,7 @@ public class recuperarPass extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

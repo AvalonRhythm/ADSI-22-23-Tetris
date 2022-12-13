@@ -4,11 +4,19 @@
  */
 package menuPrincipal;
 
+import com.zetcode.Tetris;
+
+import java.awt.*;
+
+import com.zetcode.Tetris;
+import niveles.niveles;
+
 /**
  *
  * @author unai
  */
 public class menuPrincipal extends javax.swing.JFrame {
+    private niveles selecNive = new niveles();
 
     /**
      * Creates new form menuPrincipal
@@ -133,7 +141,8 @@ public class menuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_recuperarPartButtonMouseClicked
 
     private void nuevaPartButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nuevaPartButtonMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU nueva partida.");
+        selecNive.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_nuevaPartButtonMouseClicked
 
     private void premiosButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_premiosButtonMouseClicked
@@ -147,7 +156,7 @@ public class menuPrincipal extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

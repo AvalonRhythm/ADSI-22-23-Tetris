@@ -4,7 +4,9 @@
  */
 package registro;
 
-import java.awt.Color;
+import java.awt.*;
+import Login.Login;
+import menuPrincipal.menuPrincipal;
 
 /**
  *
@@ -43,8 +45,8 @@ public class registro extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        background.setBackground(new java.awt.Color(204, 204, 255));
-        background.setForeground(new java.awt.Color(204, 204, 204));
+        background.setBackground(new Color(204, 204, 255));
+        background.setForeground(new Color(204, 204, 204));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         registroIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/registro.png"))); // NOI18N
@@ -54,7 +56,7 @@ public class registro extends javax.swing.JFrame {
         titulo.setText("REGISTRO");
         background.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
 
-        mail.setForeground(new java.awt.Color(204, 204, 204));
+        mail.setForeground(new Color(204, 204, 204));
         mail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         mail.setText("Introduce un correo elecrónico");
         mail.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -70,7 +72,7 @@ public class registro extends javax.swing.JFrame {
         });
         background.add(mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 340, 30));
 
-        nombreUsuario.setForeground(new java.awt.Color(204, 204, 204));
+        nombreUsuario.setForeground(new Color(204, 204, 204));
         nombreUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         nombreUsuario.setText("Introduce un nombre de usuario");
         nombreUsuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -86,7 +88,7 @@ public class registro extends javax.swing.JFrame {
         });
         background.add(nombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 340, 30));
 
-        enviarButton.setBackground(new java.awt.Color(255, 51, 153));
+        enviarButton.setBackground(new Color(255, 51, 153));
         enviarButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         enviarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         enviarButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -102,7 +104,7 @@ public class registro extends javax.swing.JFrame {
 
         background.add(enviarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 240, 50));
 
-        incioSesionButton.setBackground(new java.awt.Color(204, 204, 255));
+        incioSesionButton.setBackground(new Color(204, 204, 255));
         incioSesionButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         incioSesionButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -116,7 +118,7 @@ public class registro extends javax.swing.JFrame {
 
         background.add(incioSesionButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 690, 190, 30));
 
-        repetirPass.setForeground(new java.awt.Color(204, 204, 204));
+        repetirPass.setForeground(new Color(204, 204, 204));
         repetirPass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         repetirPass.setText("********");
         repetirPass.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -127,7 +129,7 @@ public class registro extends javax.swing.JFrame {
         });
         background.add(repetirPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 340, 30));
 
-        pass.setForeground(new java.awt.Color(204, 204, 204));
+        pass.setForeground(new Color(204, 204, 204));
         pass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         pass.setText("********");
         pass.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -152,11 +154,16 @@ public class registro extends javax.swing.JFrame {
     }//GEN-LAST:event_nombreUsuarioActionPerformed
 
     private void incioSesionButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_incioSesionButtonMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Redirección a inicio sesión.");
+        this.dispose();
+        Login inicioSesion = new Login();
+        inicioSesion.setVisible(true);
     }//GEN-LAST:event_incioSesionButtonMouseClicked
 
     private void enviarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enviarButtonMouseClicked
         javax.swing.JOptionPane.showMessageDialog(this, "Se creará una cuenta con los datos.");
+        this.dispose();
+        menuPrincipal menuPrin = new menuPrincipal();
+        menuPrin.setVisible(true);
     }//GEN-LAST:event_enviarButtonMouseClicked
 
     private void mailMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mailMousePressed
@@ -164,12 +171,12 @@ public class registro extends javax.swing.JFrame {
             mail.setText("");
             mail.setForeground(Color.black);
         }
-        
+
         if (nombreUsuario.getText().isEmpty()){
             nombreUsuario.setText("Introduce un nombre de usuario");
             nombreUsuario.setForeground(Color.gray);
         }
-        
+
         if (String.valueOf(pass.getPassword()).isEmpty() && String.valueOf(repetirPass.getPassword()).isEmpty()){
             pass.setText("********");
             repetirPass.setText("********");
@@ -183,12 +190,12 @@ public class registro extends javax.swing.JFrame {
             nombreUsuario.setText("");
             nombreUsuario.setForeground(Color.black);
         }
-        
+
         if (mail.getText().isEmpty()){
             mail.setText("Introduce un correo electrónico");
             mail.setForeground(Color.gray);
         }
-        
+
         if (String.valueOf(pass.getPassword()).isEmpty() && String.valueOf(repetirPass.getPassword()).isEmpty()){
             pass.setText("********");
             repetirPass.setText("********");
@@ -202,17 +209,17 @@ public class registro extends javax.swing.JFrame {
             pass.setText("");
             pass.setForeground(Color.black);
         }
-        
+
         if (mail.getText().isEmpty()){
             mail.setText("Introduce un correo electrónico");
             mail.setForeground(Color.gray);
         }
-        
+
         if (nombreUsuario.getText().isEmpty()){
             nombreUsuario.setText("Introduce un nombre de usuario");
             nombreUsuario.setForeground(Color.gray);
         }
-        
+
         if (String.valueOf(repetirPass.getPassword()).isEmpty()){
             repetirPass.setText("********");
             repetirPass.setForeground(Color.gray);
@@ -224,17 +231,17 @@ public class registro extends javax.swing.JFrame {
             repetirPass.setText("");
             repetirPass.setForeground(Color.black);
         }
-        
+
         if (mail.getText().isEmpty()){
             mail.setText("Introduce un correo electrónico");
             mail.setForeground(Color.gray);
         }
-        
+
         if (nombreUsuario.getText().isEmpty()){
             nombreUsuario.setText("Introduce un nombre de usuario");
             nombreUsuario.setForeground(Color.gray);
         }
-        
+
         if (String.valueOf(pass.getPassword()).isEmpty()){
             pass.setText("********");
             pass.setForeground(Color.gray);
@@ -248,7 +255,7 @@ public class registro extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

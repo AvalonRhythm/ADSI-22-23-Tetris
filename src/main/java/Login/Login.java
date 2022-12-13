@@ -4,7 +4,11 @@
  */
 package Login;
 
-import java.awt.Color;
+import java.awt.*;
+
+import registro.registro;
+import recuperarPass.recuperarPass;
+import menuPrincipal.menuPrincipal;
 
 /**
  *
@@ -42,12 +46,12 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        Background.setBackground(new java.awt.Color(204, 204, 255));
+        Background.setBackground(new Color(204, 204, 255));
         Background.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Background.setName(""); // NOI18N
         Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        nomUsuario.setForeground(new java.awt.Color(204, 204, 204));
+        nomUsuario.setForeground(new Color(204, 204, 204));
         nomUsuario.setText("Introduzca su usuario");
         nomUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -61,7 +65,7 @@ public class Login extends javax.swing.JFrame {
         });
         Background.add(nomUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 350, -1));
 
-        password.setForeground(new java.awt.Color(204, 204, 204));
+        password.setForeground(new Color(204, 204, 204));
         password.setText("********");
         password.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -70,7 +74,7 @@ public class Login extends javax.swing.JFrame {
         });
         Background.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 350, -1));
 
-        botonEntrar.setBackground(new java.awt.Color(51, 102, 255));
+        botonEntrar.setBackground(new Color(51, 102, 255));
         botonEntrar.setToolTipText("");
         botonEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonEntrar.setName(""); // NOI18N
@@ -85,14 +89,14 @@ public class Login extends javax.swing.JFrame {
         botonEntrar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         entrarWord.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
-        entrarWord.setForeground(new java.awt.Color(255, 255, 255));
+        entrarWord.setForeground(new Color(255, 255, 255));
         entrarWord.setText("ENTRAR");
         botonEntrar.add(entrarWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
 
         Background.add(botonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 220, 40));
         botonEntrar.getAccessibleContext().setAccessibleName("");
 
-        BotonRegistro.setBackground(new java.awt.Color(204, 204, 255));
+        BotonRegistro.setBackground(new Color(204, 204, 255));
         BotonRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -101,28 +105,28 @@ public class Login extends javax.swing.JFrame {
         });
 
         registrarseWord.setFont(new java.awt.Font("Liberation Sans", 3, 15)); // NOI18N
-        registrarseWord.setForeground(new java.awt.Color(102, 102, 102));
+        registrarseWord.setForeground(new Color(102, 102, 102));
         registrarseWord.setText("REGISTRARSE");
 
         javax.swing.GroupLayout BotonRegistroLayout = new javax.swing.GroupLayout(BotonRegistro);
         BotonRegistro.setLayout(BotonRegistroLayout);
         BotonRegistroLayout.setHorizontalGroup(
-            BotonRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BotonRegistroLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(registrarseWord)
-                .addContainerGap(54, Short.MAX_VALUE))
+                BotonRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(BotonRegistroLayout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addComponent(registrarseWord)
+                                .addContainerGap(54, Short.MAX_VALUE))
         );
         BotonRegistroLayout.setVerticalGroup(
-            BotonRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonRegistroLayout.createSequentialGroup()
-                .addGap(0, 2, Short.MAX_VALUE)
-                .addComponent(registrarseWord))
+                BotonRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BotonRegistroLayout.createSequentialGroup()
+                                .addGap(0, 2, Short.MAX_VALUE)
+                                .addComponent(registrarseWord))
         );
 
         Background.add(BotonRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 220, 20));
 
-        botonRecuperarPass.setBackground(new java.awt.Color(204, 204, 255));
+        botonRecuperarPass.setBackground(new Color(204, 204, 255));
         botonRecuperarPass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonRecuperarPass.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -131,23 +135,23 @@ public class Login extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 2, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setForeground(new Color(102, 102, 102));
         jLabel2.setText("¿Has olvidado tu contraseña?");
 
         javax.swing.GroupLayout botonRecuperarPassLayout = new javax.swing.GroupLayout(botonRecuperarPass);
         botonRecuperarPass.setLayout(botonRecuperarPassLayout);
         botonRecuperarPassLayout.setHorizontalGroup(
-            botonRecuperarPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(botonRecuperarPassLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel2)
-                .addContainerGap(31, Short.MAX_VALUE))
+                botonRecuperarPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(botonRecuperarPassLayout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabel2)
+                                .addContainerGap(31, Short.MAX_VALUE))
         );
         botonRecuperarPassLayout.setVerticalGroup(
-            botonRecuperarPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(botonRecuperarPassLayout.createSequentialGroup()
-                .addComponent(jLabel2)
-                .addGap(0, 0, Short.MAX_VALUE))
+                botonRecuperarPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(botonRecuperarPassLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         Background.add(botonRecuperarPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, 240, 20));
@@ -158,15 +162,15 @@ public class Login extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -185,12 +189,12 @@ public class Login extends javax.swing.JFrame {
             nomUsuario.setText("");
             nomUsuario.setForeground(Color.black);
         }
-        
+
         if (String.valueOf(password.getPassword()).isEmpty()){
             password.setText("********");
             password.setForeground(Color.gray);
         }
-        
+
     }//GEN-LAST:event_nomUsuarioMousePressed
 
     private void passwordMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordMousePressed
@@ -198,7 +202,7 @@ public class Login extends javax.swing.JFrame {
             nomUsuario.setText("Introduzca su usuario");
             nomUsuario.setForeground(Color.gray);
         }
-        
+
         if(String.valueOf(password.getPassword()).equals("********")){
             password.setText("");
             password.setForeground(Color.black);
@@ -208,14 +212,21 @@ public class Login extends javax.swing.JFrame {
 
     private void botonEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEntrarMouseClicked
         javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " + nomUsuario.getText() + "\nContraseña: " + String.valueOf(password.getPassword()) , "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        menuPrincipal menuPrin = new menuPrincipal();
+        this.dispose();
+        menuPrin.setVisible(true);
     }//GEN-LAST:event_botonEntrarMouseClicked
 
     private void BotonRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegistroMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Redirección a la IU de Registro");
+        this.dispose();
+        registro regis = new registro();
+        regis.setVisible(true);
     }//GEN-LAST:event_BotonRegistroMouseClicked
 
     private void botonRecuperarPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRecuperarPassMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Redirección a la IU de Recuperar Contraseña");
+        this.dispose();
+        recuperarPass recuPass = new recuperarPass();
+        recuPass.setVisible(true);
     }//GEN-LAST:event_botonRecuperarPassMouseClicked
 
     /**
@@ -225,7 +236,7 @@ public class Login extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

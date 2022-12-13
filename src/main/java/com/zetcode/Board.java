@@ -11,6 +11,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.*;
+
+import menuPausa.menuPausa;
+import menuPrincipal.menuPrincipal;
+import finPartida.finPartida;
 
 public class Board extends JPanel {
 
@@ -30,9 +35,17 @@ public class Board extends JPanel {
     // board es la lista de shape y noShape. Es el estado del juegpo
     private Tetrominoe[] board;
 
-    public Board(Tetris parent) {
+    private Tetris parent;
 
-        initBoard(parent);
+    private menuPrincipal menuPrin = new menuPrincipal();
+
+    private finPartida finPar = new finPartida();
+
+    private menuPausa menuPaus = new menuPausa();
+
+    public Board(Tetris pParent) {
+        initBoard(pParent);
+        this.parent = pParent;
     }
 
     private void initBoard(Tetris parent) {
@@ -77,12 +90,46 @@ public class Board extends JPanel {
         if (isPaused) {
 
             statusbar.setText("paused");
+            menuPaus.setVisible(true);
         } else {
 
             statusbar.setText(String.valueOf(numLinesRemoved));
         }
 
         repaint();
+    }
+
+    public void guardarPartida(){
+        try{
+            ObjectOutputStream escritor = new ObjectOutputStream(new FileOutputStream("src/cosasGuardadas/partidaTetris.bin"));
+            // Se escribe tal cual esta en memoría RAM, como archivo binario
+            escritor.writeObject(board);
+            escritor.close();
+        }
+        catch (FileNotFoundException e){
+            System.out.println("No se encuentra el fichero: partidaTetris.bin");
+        }
+        catch (IOException e){
+            System.out.println("Problema de acceso al fichero: partidaTetris.bin");
+        }
+        parent.dispose();
+        javax.swing.JOptionPane.showMessageDialog(this, "¡Partida Guardada Correctamente!");
+        menuPrin.setVisible(true);
+    }
+
+    public void cargarPartida(){
+        try {
+            ObjectInputStream lector = new ObjectInputStream(new FileInputStream("d:/partida3Raya.bin"));
+            //Leemos los bytes del archivo y nos retornara; un Object, al que haremos casting a Tetrominoe[]
+            board = (Tetrominoe[]) lector.readObject();
+            lector.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("No se encuentra fichero: partidaTetris.bin");
+        } catch (IOException e) {
+            System.out.println("Problema de acceso a fichero: partidaTetris.bin");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Los datos obtenidos no permiten recuperar la partida");
+        }
     }
 
     @Override
@@ -188,7 +235,11 @@ public class Board extends JPanel {
             timer.stop();
 
             var msg = String.format("Game over. Score: %d", numLinesRemoved);
-            statusbar.setText(msg);
+            String puntuacion = statusbar.getText();
+            javax.swing.JOptionPane.showMessageDialog(this, "GAME OVER!! \n Tu puntuación ha sido : " + puntuacion);
+            finPar.setPuntuacion(puntuacion);
+            finPar.setVisible(true);
+            parent.dispose();
         }
     }
 
@@ -336,6 +387,7 @@ public class Board extends JPanel {
                 case KeyEvent.VK_UP -> tryMove(curPiece.rotateLeft(), curX, curY);
                 case KeyEvent.VK_SPACE -> dropDown();
                 case KeyEvent.VK_D -> oneLineDown();
+                case KeyEvent.VK_G -> guardarPartida();
             }
         }
     }

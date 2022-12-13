@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package menuPausa;
+import menuPrincipal.menuPrincipal;
+import com.zetcode.*;
 
 /**
  *
@@ -110,18 +112,19 @@ public class menuPausa extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void reanudarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reanudarButtonMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Se reanudará la partida.");
-
-    }//GEN-LAST:event_reanudarButtonMouseClicked
-
     private void guardarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guardarButtonMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Se guardará la partida");
+        javax.swing.JOptionPane.showMessageDialog(this, "Tras cerrarse el menú pulse la tecla 'G'");
+        this.dispose();
     }//GEN-LAST:event_guardarButtonMouseClicked
 
     private void personalizarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_personalizarButtonMouseClicked
         javax.swing.JOptionPane.showMessageDialog(this, "Redirección a la IU de personalización");
     }//GEN-LAST:event_personalizarButtonMouseClicked
+
+    private void reanudarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reanudarButtonMouseClicked
+        javax.swing.JOptionPane.showMessageDialog(this, "Cuando se cierre el menú pulse la tecla 'P'");
+        this.dispose();
+    }//GEN-LAST:event_reanudarButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -130,7 +133,7 @@ public class menuPausa extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

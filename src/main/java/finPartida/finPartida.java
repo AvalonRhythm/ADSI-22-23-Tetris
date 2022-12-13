@@ -1,16 +1,20 @@
-package finPartida;/*
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+package finPartida;
+
+import menuPrincipal.menuPrincipal;
 
 /**
  *
  * @author unai
  */
 public class finPartida extends javax.swing.JFrame {
-
+    private menuPrincipal menuPrin = new menuPrincipal();
+    private String puntos = "Nada";
     /**
-     * Creates new form finPartida.finPartida
+     * Creates new form finPartida
      */
     public finPartida() {
         initComponents();
@@ -112,13 +116,13 @@ public class finPartida extends javax.swing.JFrame {
         puntuacionPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         puntuación.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
-        puntuación.setText("Aquí saldrá la puntuación");
+        puntuación.setText(puntos);
         puntuacionPanel.add(puntuación, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
         background.add(puntuacionPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 350, 150));
 
         puntuación1.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
-        puntuación1.setText("Puntuación :");
+        puntuación1.setText("Puntuación : ");
         background.add(puntuación1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
         getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 500));
@@ -126,6 +130,11 @@ public class finPartida extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void setPuntuacion(String points){
+        puntos = points;
+        System.out.println(puntos);
+        this.puntuación.setText(puntos);
+    }
     private void instagramMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_instagramMousePressed
         javax.swing.JOptionPane.showMessageDialog(this, "Subir puntuación a Instagram");
     }//GEN-LAST:event_instagramMousePressed
@@ -139,7 +148,8 @@ public class finPartida extends javax.swing.JFrame {
     }//GEN-LAST:event_facebookMouseClicked
 
     private void cerrarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrarButtonMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Se cerrará la pantalla.");
+        menuPrin.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_cerrarButtonMouseClicked
 
     /**
@@ -149,7 +159,7 @@ public class finPartida extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
