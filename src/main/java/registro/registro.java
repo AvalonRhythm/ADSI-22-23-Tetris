@@ -5,13 +5,14 @@
 package registro;
 
 import java.awt.Color;
+import Login.Login;
+import menuPrincipal.menuPrincipal;
 
 /**
  *
  * @author unai
  */
 public class registro extends javax.swing.JFrame {
-
     /**
      * Creates new form registro
      */
@@ -153,10 +154,14 @@ public class registro extends javax.swing.JFrame {
 
     private void incioSesionButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_incioSesionButtonMouseClicked
         javax.swing.JOptionPane.showMessageDialog(this, "Redirección a inicio sesión.");
+        new Login().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_incioSesionButtonMouseClicked
 
     private void enviarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enviarButtonMouseClicked
         javax.swing.JOptionPane.showMessageDialog(this, "Se creará una cuenta con los datos.");
+        new menuPrincipal().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_enviarButtonMouseClicked
 
     private void mailMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mailMousePressed

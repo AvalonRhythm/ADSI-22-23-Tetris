@@ -5,6 +5,9 @@
 package Login;
 
 import java.awt.Color;
+import registro.registro;
+import recuperarPass.recuperarPass;
+import menuPrincipal.menuPrincipal;
 
 /**
  *
@@ -208,14 +211,20 @@ public class Login extends javax.swing.JFrame {
 
     private void botonEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEntrarMouseClicked
         javax.swing.JOptionPane.showMessageDialog(this, "Intento de login con los datos:\nUsuario: " + nomUsuario.getText() + "\nContraseña: " + String.valueOf(password.getPassword()) , "LOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        new menuPrincipal().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_botonEntrarMouseClicked
 
     private void BotonRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegistroMouseClicked
         javax.swing.JOptionPane.showMessageDialog(this, "Redirección a la IU de Registro");
+        new registro().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_BotonRegistroMouseClicked
 
     private void botonRecuperarPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRecuperarPassMouseClicked
         javax.swing.JOptionPane.showMessageDialog(this, "Redirección a la IU de Recuperar Contraseña");
+        new recuperarPass().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_botonRecuperarPassMouseClicked
 
     /**
