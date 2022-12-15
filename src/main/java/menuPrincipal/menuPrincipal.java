@@ -4,12 +4,8 @@
  */
 package menuPrincipal;
 
-import com.zetcode.Tetris;
-
-import java.awt.*;
-
-import com.zetcode.Tetris;
 import niveles.niveles;
+import premios.premios;
 
 /**
  *
@@ -17,7 +13,6 @@ import niveles.niveles;
  */
 public class menuPrincipal extends javax.swing.JFrame {
     private niveles selecNive = new niveles();
-
     /**
      * Creates new form menuPrincipal
      */
@@ -146,7 +141,9 @@ public class menuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_nuevaPartButtonMouseClicked
 
     private void premiosButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_premiosButtonMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU premios.");
+        //javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU de premios.");
+        new premios().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_premiosButtonMouseClicked
 
     /**
