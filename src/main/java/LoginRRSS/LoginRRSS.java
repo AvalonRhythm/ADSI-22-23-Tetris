@@ -48,7 +48,6 @@ public class LoginRRSS extends javax.swing.JFrame {
         setResizable(false);
 
         Background.setBackground(new Color(204, 204, 255));
-        Background.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
         Background.setName(""); // NOI18N
         Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -91,7 +90,7 @@ public class LoginRRSS extends javax.swing.JFrame {
 
         entrarWord.setFont(new Font("Liberation Sans", 1, 18)); // NOI18N
         entrarWord.setForeground(new Color(255, 255, 255));
-        entrarWord.setText("ENTRAR");
+        entrarWord.setText("PUBLICAR");
         botonEntrar.add(entrarWord, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
 
         Background.add(botonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 220, 40));
@@ -107,7 +106,7 @@ public class LoginRRSS extends javax.swing.JFrame {
 
         registrarseWord.setFont(new Font("Liberation Sans", 3, 15)); // NOI18N
         registrarseWord.setForeground(new Color(102, 102, 102));
-        registrarseWord.setText("REGISTRARSE");
+        registrarseWord.setText("");
 
         javax.swing.GroupLayout BotonRegistroLayout = new javax.swing.GroupLayout(BotonRegistro);
         BotonRegistro.setLayout(BotonRegistroLayout);
@@ -128,32 +127,13 @@ public class LoginRRSS extends javax.swing.JFrame {
         Background.add(BotonRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 220, 20));
 
         botonRecuperarPass.setBackground(new Color(204, 204, 255));
-        botonRecuperarPass.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        botonRecuperarPass.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonRecuperarPassMouseClicked(evt);
-            }
-        });
 
         jLabel2.setFont(new Font("Liberation Sans", 2, 14)); // NOI18N
         jLabel2.setForeground(new Color(102, 102, 102));
-        jLabel2.setText("¿Has olvidado tu contraseña?");
+        jLabel2.setText("");
 
-        javax.swing.GroupLayout botonRecuperarPassLayout = new javax.swing.GroupLayout(botonRecuperarPass);
-        botonRecuperarPass.setLayout(botonRecuperarPassLayout);
-        botonRecuperarPassLayout.setHorizontalGroup(
-                botonRecuperarPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(botonRecuperarPassLayout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jLabel2)
-                                .addContainerGap(31, Short.MAX_VALUE))
-        );
-        botonRecuperarPassLayout.setVerticalGroup(
-                botonRecuperarPassLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(botonRecuperarPassLayout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(0, 0, Short.MAX_VALUE))
-        );
+
+
 
         Background.add(botonRecuperarPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, 240, 20));
 

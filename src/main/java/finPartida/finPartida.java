@@ -140,7 +140,6 @@ public class finPartida extends javax.swing.JFrame {
         this.puntuación.setText(puntos);
     }
     private void instagramMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_instagramMousePressed
-        this.setVisible(false);
         LoginRRSS inicioSesion = new LoginRRSS();
         inicioSesion.setVisible(true);
     }//GEN-LAST:event_instagramMousePressed
@@ -148,14 +147,11 @@ public class finPartida extends javax.swing.JFrame {
     private void twitterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_twitterMouseClicked
         LoginRRSS inicioSesion = new LoginRRSS();
         inicioSesion.setVisible(true);
-        //javax.swing.JOptionPane.showMessageDialog(this, "Subir puntuación a Twitter");
     }//GEN-LAST:event_twitterMouseClicked
 
     private void facebookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facebookMouseClicked
-        this.setVisible(false);
         LoginRRSS inicioSesion = new LoginRRSS();
         inicioSesion.setVisible(true);
-        //javax.swing.JOptionPane.showMessageDialog(this, "Subir puntuación a Facebook");
     }//GEN-LAST:event_facebookMouseClicked
 
     private void cerrarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrarButtonMouseClicked
