@@ -6,7 +6,6 @@ package recuperarPass;
 
 import java.awt.*;
 import Login.Login;
-
 /**
  *
  * @author unai

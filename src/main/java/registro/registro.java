@@ -5,8 +5,9 @@
 package registro;
 
 import java.awt.*;
-import Login.Login;
+
 import menuPrincipal.menuPrincipal;
+import Login.Login;
 
 /**
  *

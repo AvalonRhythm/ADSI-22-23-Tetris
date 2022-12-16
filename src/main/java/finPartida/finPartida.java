@@ -4,7 +4,11 @@
  */
 package finPartida;
 
+import LoginRRSS.LoginRRSS;
+import com.zetcode.Tetris;
 import menuPrincipal.menuPrincipal;
+
+import java.awt.*;
 
 /**
  *
@@ -136,15 +140,22 @@ public class finPartida extends javax.swing.JFrame {
         this.puntuación.setText(puntos);
     }
     private void instagramMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_instagramMousePressed
-        javax.swing.JOptionPane.showMessageDialog(this, "Subir puntuación a Instagram");
+        this.setVisible(false);
+        LoginRRSS inicioSesion = new LoginRRSS();
+        inicioSesion.setVisible(true);
     }//GEN-LAST:event_instagramMousePressed
 
     private void twitterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_twitterMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Subir puntuación a Twitter");
+        LoginRRSS inicioSesion = new LoginRRSS();
+        inicioSesion.setVisible(true);
+        //javax.swing.JOptionPane.showMessageDialog(this, "Subir puntuación a Twitter");
     }//GEN-LAST:event_twitterMouseClicked
 
     private void facebookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facebookMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Subir puntuación a Facebook");
+        this.setVisible(false);
+        LoginRRSS inicioSesion = new LoginRRSS();
+        inicioSesion.setVisible(true);
+        //javax.swing.JOptionPane.showMessageDialog(this, "Subir puntuación a Facebook");
     }//GEN-LAST:event_facebookMouseClicked
 
     private void cerrarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrarButtonMouseClicked
