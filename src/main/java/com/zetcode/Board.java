@@ -206,6 +206,7 @@ public class Board extends JPanel {
         }
     }
 
+
     private void pieceDropped() {
 
         for (int i = 0; i < 4; i++) {
@@ -310,7 +311,6 @@ public class Board extends JPanel {
     }
 
     private void drawSquare(Graphics g, int x, int y, Tetrominoe shape) {
-
         Color colors[] = {new Color(0, 0, 0), new Color(204, 102, 102),
                 new Color(102, 204, 102), new Color(102, 102, 204),
                 new Color(204, 204, 102), new Color(204, 102, 204),
@@ -318,7 +318,7 @@ public class Board extends JPanel {
         };
 
         var color = colors[shape.ordinal()];
-
+        ///var color = this.cFondo;
         g.setColor(color);
         g.fillRect(x + 1, y + 1, squareWidth() - 2, squareHeight() - 2);
 
