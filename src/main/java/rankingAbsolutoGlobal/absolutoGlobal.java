@@ -9,13 +9,15 @@ import com.zetcode.Tetris;
 import java.awt.*;
 
 import com.zetcode.Tetris;
-import niveles.niveles;
+import menuPrincipal.menuPrincipal;
 
 /**
  *
  * @author andreea
  */
 public class absolutoGlobal extends javax.swing.JFrame {
+
+    //public menuPrincipal principal = new menuPrincipal();
 
     /**
      * Creates new form absolutoGlobal
@@ -101,7 +103,10 @@ public class absolutoGlobal extends javax.swing.JFrame {
     }// </editor-fold>
 
     private void cerrarButtonMouseClicked(java.awt.event.MouseEvent evt) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Redirección a la IU de menú principal.");
+
+        //javax.swing.JOptionPane.showMessageDialog(this, "Redirección a la IU de menú principal.");
+        //principal.setVisible(true);
+        //this.dispose();
     }
 
     /**

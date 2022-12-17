@@ -9,13 +9,17 @@ import com.zetcode.Tetris;
 import java.awt.*;
 
 import com.zetcode.Tetris;
-import niveles.niveles;
+import rankingAbsolutoPersonal.absolutoPersonal;
+import rankingAbsolutoGlobal.absolutoGlobal;
 
 /**
  *
  * @author andreea
  */
 public class rankingAbsoluto extends javax.swing.JFrame {
+
+    private absolutoGlobal global = new absolutoGlobal();
+    private absolutoPersonal personal = new absolutoPersonal();
 
     /**
      * Creates new form rankingAbsoluto
@@ -88,11 +92,15 @@ public class rankingAbsoluto extends javax.swing.JFrame {
     }// </editor-fold>
 
     private void personalButtonMouseClicked(java.awt.event.MouseEvent evt) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU Ranking Absoluto Personal.");
+        //javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU Ranking Absoluto Personal.");
+        personal.setVisible(true);
+        this.dispose();
     }
 
     private void globalButtonMouseClicked(java.awt.event.MouseEvent evt) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU Ranking Absoluto Global.");
+        //javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU Ranking Absoluto Global.");
+        global.setVisible(true);
+        this.dispose();
     }
 
     /**

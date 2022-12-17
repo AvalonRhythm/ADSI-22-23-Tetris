@@ -10,6 +10,7 @@ import java.awt.*;
 
 import com.zetcode.Tetris;
 import niveles.niveles;
+import rankingInicial.rankingInicial;
 
 /**
  *
@@ -17,6 +18,7 @@ import niveles.niveles;
  */
 public class menuPrincipal extends javax.swing.JFrame {
     private niveles selecNive = new niveles();
+    private rankingInicial rinicial= new rankingInicial();
 
     /**
      * Creates new form menuPrincipal
@@ -189,7 +191,9 @@ public class menuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_premiosButtonMouseClicked
 
     private void rankingButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rankingButtonMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU ranking.");
+        //javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU ranking.");
+        rinicial.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_rankingButtonMouseClicked
 
     private void opcionesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_opcionesButtonMouseClicked

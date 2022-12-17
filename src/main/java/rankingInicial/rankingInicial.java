@@ -9,7 +9,8 @@ import com.zetcode.Tetris;
 import java.awt.*;
 
 import com.zetcode.Tetris;
-import niveles.niveles;
+import rankingPorNivel.rankingPorNivel;
+import rankingAbsoluto.rankingAbsoluto;
 
 /**
  *
@@ -17,6 +18,8 @@ import niveles.niveles;
  */
 public class rankingInicial extends javax.swing.JFrame {
 
+    private rankingPorNivel pornivel = new rankingPorNivel();
+    private rankingAbsoluto absoluto = new rankingAbsoluto();
     /**
      * Creates new form rankingInicial
      */
@@ -88,11 +91,15 @@ public class rankingInicial extends javax.swing.JFrame {
     }// </editor-fold>
 
     private void porNivelButtonMouseClicked(java.awt.event.MouseEvent evt) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU Ranking Por Nivel.");
+        //javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU Ranking Por Nivel.");
+        pornivel.setVisible(true);
+        this.dispose();
     }
 
     private void absolutoButtonMouseClicked(java.awt.event.MouseEvent evt) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU Ranking Absoluto.");
+        //javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU Ranking Absoluto.");
+        absoluto.setVisible(true);
+        this.dispose();
     }
 
     /**

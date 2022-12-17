@@ -9,13 +9,17 @@ import com.zetcode.Tetris;
 import java.awt.*;
 
 import com.zetcode.Tetris;
-import niveles.niveles;
+import rankingPorNivelPersonal.porNivelPersonal;
+import rankingPorNivelGlobal.porNivelGlobal;
 
 /**
  *
  * @author andreea
  */
 public class rankingPorNivel extends javax.swing.JFrame {
+
+    private porNivelPersonal personal = new porNivelPersonal();
+    private porNivelGlobal global = new porNivelGlobal();
 
     /**
      * Creates new form rankingPorNivel
@@ -88,11 +92,15 @@ public class rankingPorNivel extends javax.swing.JFrame {
     }// </editor-fold>
 
     private void personalButtonMouseClicked(java.awt.event.MouseEvent evt) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU Ranking Por Nivel Personal.");
+        //javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU Ranking Por Nivel Personal.");
+        personal.setVisible(true);
+        this.dispose();
     }
 
     private void globalButtonMouseClicked(java.awt.event.MouseEvent evt) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU Ranking Por Nivel Global.");
+        //javax.swing.JOptionPane.showMessageDialog(this, "Redirección a IU Ranking Por Nivel Global.");
+        global.setVisible(true);
+        this.dispose();
     }
 
     /**
