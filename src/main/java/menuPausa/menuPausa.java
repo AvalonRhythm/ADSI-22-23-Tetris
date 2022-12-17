@@ -4,6 +4,7 @@
  */
 package menuPausa;
 import menuPrincipal.menuPrincipal;
+import personalizarPartida.PersonalizacionPartida;
 import com.zetcode.*;
 
 /**
@@ -118,7 +119,8 @@ public class menuPausa extends javax.swing.JFrame {
     }//GEN-LAST:event_guardarButtonMouseClicked
 
     private void personalizarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_personalizarButtonMouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Redirección a la IU de personalización");
+        javax.swing.JOptionPane.showMessageDialog(this, "Personalización");
+        new personalizarPartida.PersonalizacionPartida().setVisible(true);
     }//GEN-LAST:event_personalizarButtonMouseClicked
 
     private void reanudarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reanudarButtonMouseClicked
